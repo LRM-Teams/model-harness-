@@ -1,0 +1,22 @@
+name: CPU protocol and Pi integration
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install uv
+      - run: uv sync --locked --extra dev
+      - run: npm install -g @earendil-works/pi-coding-agent@0.84.3
+      - run: uv run ruff check src tests
+      - run: uv run ruff format --check src tests
+      - run: uv run pytest -q
+        env:
+          RUN_PI_E2E: '1'

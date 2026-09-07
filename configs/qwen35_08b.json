@@ -1,0 +1,16 @@
+{
+  "model_id": "Qwen/Qwen3.5-0.8B",
+  "context_length": 8192,
+  "max_new_tokens": 1024,
+  "max_calls": 8,
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "tool_parser": "qwen3_coder",
+  "reasoning_parser": "qwen3",
+  "thinking": false,
+  "session_timeout_s": 300,
+  "generation_timeout_s": 120,
+  "sequential_sessions": 20,
+  "concurrent_sessions": 4,
+  "optimizer_steps": 0
+}
