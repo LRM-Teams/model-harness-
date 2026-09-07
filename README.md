@@ -154,3 +154,7 @@ uv run mh-g0 smoke --output artifacts/mock-run --pi "$PWD/vendor/pi/node_modules
 - 后续接 AgentEval 时复用现有 Pi connector 的独立目录能力，替换合成任务 runner，先通过 G1 的官方 reward 与 GT 隔离门禁，再做 SFT/GRPO。
 
 设计与源码参考见 [docs/design.md](docs/design.md)，验证记录见 [docs/validation.md](docs/validation.md)。
+
+## 已有 teacher 轨迹转 SFT 数据
+
+提供独立的 [DeepSeek V4 Flash 数据整理脚本与说明](docs/teacher-sft.md)：筛选通过任务、校验原始 Pi 工具调用链及缓存 schema、按任务族划分数据，再导出“完整历史输入 + 下一次 assistant 输出”的 8K 样本。它只准备本地数据，不启动训练；原始数据和导出 JSONL 都不提交到 GitHub。
