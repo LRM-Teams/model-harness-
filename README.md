@@ -157,4 +157,6 @@ uv run mh-g0 smoke --output artifacts/mock-run --pi "$PWD/vendor/pi/node_modules
 
 ## 已有 teacher 轨迹转 SFT 数据
 
-提供独立的 [DeepSeek V4 Flash 数据整理脚本与说明](docs/teacher-sft.md)：筛选通过任务、校验原始 Pi 工具调用链及缓存 schema、按任务族划分数据，再导出“完整历史输入 + 下一次 assistant 输出”的 8K 样本。它只准备本地数据，不启动训练；原始数据和导出 JSONL 都不提交到 GitHub。
+提供独立的 [DeepSeek V4 Flash 数据整理脚本与说明](docs/teacher-sft.md)：筛选通过任务、校验原始 Pi 工具调用链及缓存 schema、按任务族划分数据，再导出“完整历史输入 + 下一次 assistant 输出”的 8K 样本。它只准备本地数据，不启动训练；原始数据保留在本地；本次经用户授权发布脱敏后的 JSONL。
+
+用户授权发布的数据现已放在 [data/teacher-sft-v1](data/teacher-sft-v1)，已替换凭据格式字符串并去掉本机路径。[0.8B SFT 运行与验收说明](docs/sft-running.md)提供单卡 20 步冒烟、固定步数训练、训练前后 NLL 和保存重载检查。GPU 训练尚未实机验收。

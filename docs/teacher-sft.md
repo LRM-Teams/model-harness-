@@ -1,6 +1,6 @@
 # DeepSeek V4 Flash 轨迹整理
 
-当前产物是数据准备工具，不是 SFT trainer，也不改变 G0 零 optimizer step 的范围。输入为已有 ClawEval 的 task result JSON 与其引用的原始 Pi session JSONL；不读取 auth、models 或 settings 文件，不把评分反馈、judge 调用记录或参考答案写入训练对话。数据只保存在本地忽略目录 `artifacts/`，不要推送到代码仓库。
+当前产物是数据准备工具，不是 SFT trainer，也不改变 G0 零 optimizer step 的范围。输入为已有 ClawEval 的 task result JSON 与其引用的原始 Pi session JSONL；不读取 auth、models 或 settings 文件，不把评分反馈、judge 调用记录或参考答案写入训练对话。原始导出保存在本地忽略目录 `artifacts/`。本次经用户明确授权，使用 `scripts/publish_teacher_data.py` 脱敏后另行发布到 `data/teacher-sft-v1/`；原始导出不上传。
 
 ## 0.8B 的第一轮怎么训练
 

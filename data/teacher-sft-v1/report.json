@@ -1,0 +1,69 @@
+{
+  "counts": {
+    "trials": 1794,
+    "passed_teacher": 1272,
+    "missing_or_multiple_sessions": 918,
+    "not_passed": 522,
+    "removed_thinking_blocks": 1196,
+    "assistant_turns": 1204,
+    "tool_calls": 3037,
+    "tool_errors": 346,
+    "missing_tool_schema": 118,
+    "unfinished_episode": 5,
+    "over_length_steps": 79,
+    "unsupported_content_block": 1,
+    "invalid_tool_arguments": 2,
+    "train_samples": 1034,
+    "train_tasks": 96,
+    "train_families": 62,
+    "validation_samples": 91,
+    "validation_tasks": 10,
+    "validation_families": 5,
+    "episodes": 228
+  },
+  "max_length": 8192,
+  "tokenizer": {
+    "repo": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "chat_template_sha256": "e9cb98e65623809a8a297af444986a3b417ecae1a19d519c0952eb1192abc5c1",
+    "enable_thinking": false
+  },
+  "length_checked": true,
+  "script_sha256": "926e7727a18a0d7b5d1dde0590fa4bb9d553bb223116a044cd8c3afbfc96d2b4",
+  "prefix_length_stats": {
+    "min": 463,
+    "max": 17057,
+    "median": 2272,
+    "p90": 6677
+  },
+  "training_launched": false,
+  "format": "conversational_prompt_completion; completion_only_loss=True",
+  "system_origin": "adapted_generic_v1_not_original_pi_prompt",
+  "thinking_policy": "drop thinking blocks; preserve visible text and tool actions",
+  "split_policy": "sha256(task_suffix_family) mod 10 == 0 => validation",
+  "limitations": [
+    "cached schema is not an exact historical request snapshot",
+    "family suffix grouping does not detect all semantic duplicates",
+    "passed grading is not a guarantee of factual correctness",
+    "tool output error recovery retained; no manual quality review",
+    "chat-template token loss boundary must be tested before training"
+  ],
+  "files": {
+    "train.jsonl": "ed5d392fedf45a0e6d7891e00e2b3a842f4bbcb400b380a0637788d8fb0fa056",
+    "validation.jsonl": "160f8c6f79c9b2dffeec7a4703ab6d79c922f24b8b554ed4b183134d8f675197",
+    "episodes.jsonl": "1d8f5e7786394eaa364d948a70d6a25b523b8e4e68518874ec658a0ad15d508e",
+    "overlength.jsonl": "4508c72118c53c779a0897c6380f4ca7acc7c8b4d44bae7ef461c2d47b57bb95",
+    "rejected.jsonl": "26d4ed5fabf9e180b66ea33e319b1a7212a9f2a793c6a9148f1260cffd5c170b"
+  },
+  "publication": {
+    "sanitization": {
+      "train.jsonl": 1034,
+      "credential_occurrences": 105,
+      "validation.jsonl": 91,
+      "episodes.jsonl": 228,
+      "overlength.jsonl": 79,
+      "rejected.jsonl": 1566
+    },
+    "note": "Credential-like strings replaced consistently; host provenance paths removed. This is pattern screening, not a guarantee that every sensitive string is detected."
+  }
+}
